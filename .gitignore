@@ -1,0 +1,22 @@
+# 依赖
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# 密钥与本地配置
+.env
+*.key
+secrets.yaml
+config/local.yaml
+
+# 构建产物 / 缓存
+build/
+dist/
+*.egg-info/
+data/kb.json
+
+# 系统
+.DS_Store
+Thumbs.db

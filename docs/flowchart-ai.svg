@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1004" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<rect x="0" y="0" width="1000" height="1004" fill="#ffffff"/>
+<rect x="0" y="0" width="1000" height="48" fill="#1e3a8a"/>
+<text x="18" y="30.0" font-size="18" fill="#ffffff" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">增加 AI 后系统流程图 · 北辰在线学院学习支持协作</text>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#6b7280"/></marker><marker id="arrR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker></defs>
+<rect x="200" y="64" width="640" height="56" rx="9" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="212" y="84.0" font-size="13" fill="#16a34a" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">多源采集：群聊 / 作业评论 / LMS / 直播</text>
+<text x="212" y="102.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">统一事件流，带业务编号 + 时间戳 + 版本</text>
+<rect x="200" y="144" width="640" height="56" rx="9" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="212" y="164.0" font-size="13" fill="#7c3aed" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">AI 识别 + 合并连续求助</text>
+<text x="212" y="182.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">按学生把连续求助合并为一张工单（REQ-1/2）</text>
+<rect x="200" y="224" width="640" height="56" rx="9" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="212" y="244.0" font-size="13" fill="#7c3aed" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">数据质量校验</text>
+<text x="212" y="262.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">校验主编号/事件时间/版本；歧义进人工修复队列（REQ-3）</text>
+<rect x="200" y="304" width="640" height="56" rx="9" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="212" y="324.0" font-size="13" fill="#7c3aed" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">生成支持建议</text>
+<text x="212" y="342.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">显示原记录 + 待确认字段；不自动定性/评分（硬边界）</text>
+<rect x="200" y="384" width="640" height="56" rx="9" fill="#fffbeb" stroke="#d97706" stroke-width="1.6"/>
+<text x="212" y="404.0" font-size="13" fill="#d97706" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">助教人工复核</text>
+<text x="212" y="422.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">确认 / 转人工 / 暂停（f15、f44）</text>
+<rect x="200" y="464" width="640" height="56" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="212" y="484.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">人工确认后联系学生</text>
+<text x="212" y="502.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">硬线：系统不直接触达（f42）</text>
+<rect x="200" y="544" width="640" height="56" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="212" y="564.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">辅导安排 + 接手确认</text>
+<text x="212" y="582.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">随单说明：编号/版本/状态/未解决/接手人（f23）</text>
+<rect x="200" y="624" width="640" height="56" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="212" y="644.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">反馈闭环</text>
+<text x="212" y="662.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">误判例子收集，按问题解决率口径（f51/f55）</text>
+<rect x="200" y="704" width="640" height="56" rx="9" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="212" y="724.0" font-size="13" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">审计链 + 复盘</text>
+<text x="212" y="742.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">编号/版本/事实/建议/人工改动/签核人（f45）</text>
+<line x1="520.0" y1="120" x2="520.0" y2="144" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="520.0" y1="200" x2="520.0" y2="224" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="520.0" y1="280" x2="520.0" y2="304" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="520.0" y1="360" x2="520.0" y2="384" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="520.0" y1="440" x2="520.0" y2="464" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="520.0" y1="520" x2="520.0" y2="544" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="520.0" y1="600" x2="520.0" y2="624" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="520.0" y1="680" x2="520.0" y2="704" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="870" y="382.0" width="250" height="60" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.4"/>
+<text x="880" y="400.0" font-size="12" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">转人工 / 暂停</text>
+<text x="880" y="418.0" font-size="10.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">标注触发原因 + 接手人 + 确</text>
+<text x="880" y="432.175" font-size="10.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">认时间（f44）</text>
+<line x1="840" y1="412.0" x2="870" y2="412.0" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<rect x="200" y="800" width="640" height="70" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.4"/>
+<text x="212" y="822.0" font-size="13" fill="#b45309" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">降级与兜底（f35）</text>
+<text x="212" y="842.0" font-size="11.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">接口中断时使用带时间戳的只读快照，显示“暂未更新”；重连后按业务编号去重补齐，不重复派单，现有人工流程继</text>
+<text x="212" y="857.525" font-size="11.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">续运行。</text>
+</svg>

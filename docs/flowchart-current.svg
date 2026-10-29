@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 860" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<rect x="0" y="0" width="1000" height="860" fill="#ffffff"/>
+<rect x="0" y="0" width="1000" height="48" fill="#1e3a8a"/>
+<text x="18" y="30.0" font-size="18" fill="#ffffff" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">无 AI 现状业务流程图 · 北辰在线学院学习支持协作</text>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#6b7280"/></marker></defs>
+<rect x="0" y="64" width="120" height="58" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="87.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">学生</text>
+<rect x="140" y="64" width="590" height="58" rx="9" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.6"/>
+<text x="152" y="84.0" font-size="13" fill="#16a34a" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">学生在群聊/作业评论中提问</text>
+<text x="152" y="102.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">求助入口分散，无统一受理渠道</text>
+<rect x="0" y="148" width="120" height="58" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="171.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">助教</text>
+<rect x="140" y="148" width="590" height="58" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="152" y="168.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">手动巡查群聊 + 作业评论</text>
+<text x="152" y="186.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">人工翻找，高峰期仅能用现有终端</text>
+<rect x="0" y="232" width="120" height="58" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="255.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">助教</text>
+<rect x="140" y="232" width="590" height="58" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="152" y="252.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">识别支持需求（靠经验）</text>
+<text x="152" y="270.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">无连续求助合并口径，常把续问当新问题</text>
+<rect x="0" y="316" width="120" height="58" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="339.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">助教</text>
+<rect x="140" y="316" width="590" height="58" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="152" y="336.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">分类与转交</text>
+<text x="152" y="354.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">约 900 条/周 × 6 分钟/条</text>
+<rect x="0" y="400" width="120" height="58" fill="#fef9c3" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="423.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">课程运营员</text>
+<rect x="140" y="400" width="590" height="58" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="152" y="420.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">交接给运营/下一责任人</text>
+<text x="152" y="438.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">现状常只写“已转交”，缺随单说明</text>
+<rect x="0" y="484" width="120" height="58" fill="#dcfce7" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="507.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">助教</text>
+<rect x="140" y="484" width="590" height="58" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="152" y="504.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">助教联系学生</text>
+<text x="152" y="522.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">首次响应约 26 小时</text>
+<rect x="0" y="568" width="120" height="58" fill="#ede9fe" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="591.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">讲师/数据</text>
+<text x="10" y="607.2" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">专员</text>
+<rect x="140" y="568" width="590" height="58" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="152" y="588.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">辅导安排</text>
+<text x="152" y="606.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">跨岗冲突、重复求助率 35%</text>
+<rect x="0" y="652" width="120" height="58" fill="#fef9c3" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="675.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">课程运营员</text>
+<rect x="140" y="652" width="590" height="58" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="152" y="672.0" font-size="13" fill="#2563eb" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">反馈</text>
+<text x="152" y="690.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">通知发送量 ≠ 实际完成量</text>
+<rect x="0" y="736" width="120" height="58" fill="#ede9fe" stroke="#cbd5e1" stroke-width="1"/>
+<text x="10" y="759.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">讲师/数据</text>
+<text x="10" y="775.2" font-size="12" fill="#1f2933" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">专员</text>
+<rect x="140" y="736" width="590" height="58" rx="9" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="152" y="756.0" font-size="13" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">复盘（退回需保留原因）</text>
+<text x="152" y="774.0" font-size="12" fill="#1f2933" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">建议无法溯源，难定位瓶颈</text>
+<line x1="435.0" y1="122" x2="435.0" y2="148" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="435.0" y1="206" x2="435.0" y2="232" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="435.0" y1="290" x2="435.0" y2="316" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="435.0" y1="374" x2="435.0" y2="400" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="435.0" y1="458" x2="435.0" y2="484" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="435.0" y1="542" x2="435.0" y2="568" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="435.0" y1="626" x2="435.0" y2="652" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="435.0" y1="710" x2="435.0" y2="736" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arr)"/>
+<rect x="746" y="155.0" width="250" height="44" rx="7" fill="#fef2f2" stroke="#fecaca" stroke-width="1.2"/>
+<text x="756" y="173.0" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">⚠ 入口分散</text>
+<text x="756" y="189.0" font-size="10.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">群聊/作业评论/LMS 各一处</text>
+<line x1="730" y1="177.0" x2="746" y2="177.0" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<rect x="746" y="239.0" width="250" height="44" rx="7" fill="#fef2f2" stroke="#fecaca" stroke-width="1.2"/>
+<text x="756" y="257.0" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">⚠ 漏接连续求助</text>
+<text x="756" y="273.0" font-size="10.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">f10：连续求助常被漏掉</text>
+<line x1="730" y1="261.0" x2="746" y2="261.0" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<rect x="746" y="407.0" width="250" height="44" rx="7" fill="#fef2f2" stroke="#fecaca" stroke-width="1.2"/>
+<text x="756" y="425.0" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">⚠ 交接无随单说明</text>
+<text x="756" y="441.0" font-size="10.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">f14：说明留便签不随单</text>
+<line x1="730" y1="429.0" x2="746" y2="429.0" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<rect x="746" y="407.0" width="250" height="44" rx="7" fill="#fef2f2" stroke="#fecaca" stroke-width="1.2"/>
+<text x="756" y="425.0" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">⚠ 无接手确认</text>
+<text x="756" y="441.0" font-size="10.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">f23：发消息≠完成</text>
+<line x1="730" y1="429.0" x2="746" y2="429.0" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<rect x="746" y="575.0" width="250" height="44" rx="7" fill="#fef2f2" stroke="#fecaca" stroke-width="1.2"/>
+<text x="756" y="593.0" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">⚠ 重复求助 35%</text>
+<text x="756" y="609.0" font-size="10.5" fill="#6b7280" text-anchor="start" font-weight="normal" font-family="PingFang SC, Microsoft YaHei, sans-serif">f00：目标 15%</text>
+<line x1="730" y1="597.0" x2="746" y2="597.0" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+</svg>

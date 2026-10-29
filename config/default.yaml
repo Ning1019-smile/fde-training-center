@@ -1,0 +1,29 @@
+# 北辰在线学院 AI 学习支持工具 - 默认配置
+project:
+  name: beichen-ai-support
+  version: 0.1.0
+
+engine:
+  need_words_extra: []        # 可扩展需求信号词
+  escalate_words_extra: []    # 可扩展红线信号词
+  merge_by: student           # 连续求助合并维度
+  confidence_base: 0.6
+  confidence_per_msg: 0.12
+  confidence_cap: 0.95
+
+kb:
+  chunk_size: 400
+  chunk_overlap: 60
+  top_k: 5
+  index_path: data/kb.json
+  docs_dir: docs
+
+paths:
+  docs: docs
+  data: data
+
+llm:
+  enabled: false              # 默认关闭；配置 api_key 后可开启合成
+  provider: openai
+  model: gpt-4o-mini
+  api_key: ${LLM_API_KEY}    # 从环境变量读取，勿硬编码

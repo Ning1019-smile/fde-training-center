@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>北辰在线学院 · AI 学习支持 MVP（演示）</title>
+<style>
+  :root{
+    --bg:#f5f7fa; --panel:#ffffff; --ink:#1f2933; --muted:#6b7280;
+    --line:#e5e7eb; --brand:#2563eb; --brand-soft:#eff6ff;
+    --green:#16a34a; --green-soft:#f0fdf4; --amber:#d97706; --amber-soft:#fffbeb;
+    --red:#dc2626; --red-soft:#fef2f2; --purple:#7c3aed; --purple-soft:#f5f3ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,Segoe UI,sans-serif;
+    background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55}
+  header{background:linear-gradient(90deg,#1e3a8a,#2563eb);color:#fff;padding:18px 24px}
+  header h1{margin:0;font-size:19px;font-weight:700}
+  header p{margin:4px 0 0;opacity:.85;font-size:13px}
+  .wrap{display:grid;grid-template-columns:360px 1fr;gap:16px;padding:16px;align-items:start}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .panel h2{margin:0 0 10px;font-size:15px;display:flex;align-items:center;gap:8px}
+  .panel h2 .tag{font-size:11px;font-weight:600;color:var(--brand);background:var(--brand-soft);
+    border:1px solid #dbeafe;padding:1px 8px;border-radius:999px}
+  label{display:block;font-size:12px;color:var(--muted);margin:8px 0 3px}
+  input,select,textarea{width:100%;border:1px solid var(--line);border-radius:7px;padding:7px 9px;
+    font:inherit;background:#fff;color:var(--ink)}
+  textarea{resize:vertical;min-height:64px}
+  .row{display:flex;gap:8px}
+  .row>*{flex:1}
+  button{cursor:pointer;border:1px solid transparent;border-radius:7px;padding:8px 12px;font:inherit;
+    font-weight:600;color:#fff;background:var(--brand);transition:.15s}
+  button:hover{filter:brightness(1.06)}
+  button.ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+  button.green{background:var(--green)} button.amber{background:var(--amber)}
+  button.red{background:var(--red)} button.purple{background:var(--purple)}
+  .btn-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .btn-row button{flex:1;min-width:120px}
+  .msg-list{max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:8px;margin-top:8px}
+  .msg-item{display:flex;gap:8px;padding:7px 9px;border-bottom:1px solid #f1f3f5;font-size:13px}
+  .msg-item:last-child{border-bottom:none}
+  .msg-item .who{font-weight:700;color:var(--brand);white-space:nowrap}
+  .msg-item .src{font-size:11px;color:var(--muted);background:#f3f4f6;border-radius:4px;padding:0 5px}
+  .msg-item .txt{flex:1}
+  .dash{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:10px}
+  .kpi .n{font-size:20px;font-weight:800}
+  .kpi .l{font-size:11px;color:var(--muted)}
+  .target{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .tcard{flex:1;min-width:200px;border:1px solid var(--line);border-radius:9px;padding:10px;
+    background:linear-gradient(180deg,#fff,#fafbff)}
+  .tcard .t{font-size:12px;color:var(--muted)}
+  .tcard .v{font-size:16px;font-weight:800;margin-top:2px}
+  .tcard .v b{color:var(--red)} .tcard .v i{color:var(--green);font-style:normal}
+  .ticket{border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:9px;
+    padding:12px;margin-bottom:12px;background:#fff}
+  .ticket.ai{border-left-color:var(--purple)}
+  .ticket.done{border-left-color:var(--green);background:var(--green-soft)}
+  .ticket.hold{border-left-color:var(--amber);background:var(--amber-soft)}
+  .ticket.manual{border-left-color:var(--red);background:var(--red-soft)}
+  .ticket .top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .tid{font-weight:800;font-size:13px;letter-spacing:.3px}
+  .badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+  .b-new{background:var(--purple-soft);color:var(--purple)}
+  .b-done{background:var(--green-soft);color:var(--green)}
+  .b-hold{background:var(--amber-soft);color:var(--amber)}
+  .b-manual{background:var(--red-soft);color:var(--red)}
+  .srcs{font-size:12px;color:var(--muted);margin:6px 0}
+  .block{background:#f8fafc;border:1px solid #eef2f7;border-radius:7px;padding:8px 10px;margin-top:8px}
+  .block .h{font-size:11px;color:var(--muted);margin-bottom:3px;font-weight:700}
+  .orig{font-size:13px;white-space:pre-wrap}
+  .sugg{font-size:13px}
+  .sugg b{color:var(--purple)}
+  .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .acts button{flex:1;min-width:96px;font-size:13px;padding:7px 8px}
+  .mini{font-size:12px;padding:5px 8px}
+  .log{margin-top:16px}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#f3f4f6;font-weight:700}
+  .note{font-size:12px;color:var(--muted);margin-top:6px}
+  .empty{color:var(--muted);font-size:13px;padding:18px;text-align:center;border:1px dashed var(--line);border-radius:8px}
+  .pill{display:inline-block;font-size:11px;background:#eef2ff;color:#4338ca;border-radius:999px;padding:1px 7px;margin:1px 2px}
+  @media(max-width:880px){.wrap{grid-template-columns:1fr}.dash{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>北辰在线学院 · AI 学习支持与辅导协作 — 最小 MVP</h1>
+  <p>演示闭环：多源求助录入 → AI 识别 / 合并连续求助 → 助教复核 → 人工确认后联系 → 审计链 → 反馈闭环。本页为离线演示，未调用真实大模型。</p>
+</header>
+
+<div class="wrap">
+  <!-- 左：录入 -->
+  <section class="panel">
+    <h2>① 多源求助录入 <span class="tag">群聊 / 作业评论 / LMS</span></h2>
+    <label>学生姓名</label>
+    <input id="stu" placeholder="如：张明" />
+    <div class="row">
+      <div>
+        <label>来源</label>
+        <select id="src">
+          <option value="群聊">群聊</option>
+          <option value="作业评论">作业评论</option>
+          <option value="LMS">LMS</option>
+        </select>
+      </div>
+      <div>
+        <label>类型</label>
+        <select id="typ">
+          <option value="作业理解">作业理解</option>
+          <option value="技术报错">技术报错</option>
+          <option value="概念疑问">概念疑问</option>
+          <option value="流程咨询">流程咨询</option>
+        </select>
+      </div>
+    </div>
+    <label>内容</label>
+    <textarea id="txt" placeholder="如：第三题完全不会做，能讲一下思路吗？"></textarea>
+    <div class="btn-row">
+      <button class="ghost" id="addBtn">＋ 添加一条</button>
+      <button class="ghost" id="sampleBtn">载入示例</button>
+      <button class="ghost" id="clearBtn">清空</button>
+    </div>
+    <div class="msg-list" id="msgList"><div class="empty">还没有录入求助，点「载入示例」快速体验。</div></div>
+
+    <div class="btn-row" style="margin-top:14px">
+      <button id="runBtn" style="flex:1">⚙ 运行 AI 分析</button>
+    </div>
+    <p class="note">规则引擎（模拟 AI）：用关键词与连续追问信号识别「支持需求」，并按学生把连续求助合并为一张工单。</p>
+  </section>
+
+  <!-- 右：分析 / 看板 / 审计 -->
+  <section>
+    <div class="dash">
+      <div class="kpi"><div class="n" id="k_msgs">0</div><div class="l">录入消息</div></div>
+      <div class="kpi"><div class="n" id="k_needs">0</div><div class="l">识别为求助</div></div>
+      <div class="kpi"><div class="n" id="k_tickets">0</div><div class="l">合并工单</div></div>
+      <div class="kpi"><div class="n" id="k_done">0</div><div class="l">已确认联系</div></div>
+    </div>
+
+    <div class="target">
+      <div class="tcard">
+        <div class="t">首次响应时长（现状 → 目标）</div>
+        <div class="v"><b>26 小时</b> → <i>8 小时</i></div>
+      </div>
+      <div class="tcard">
+        <div class="t">重复求助率（现状 → 目标）</div>
+        <div class="v"><b>35%</b> → <i>15%</i></div>
+      </div>
+      <div class="tcard">
+        <div class="t">求助漏单率（验收线）</div>
+        <div class="v"><i>&lt; 2%</i>（人工确认后联系）</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>② AI 识别 / 合并结果 <span class="tag">助教复核</span></h2>
+      <div id="tickets"><div class="empty">运行 AI 分析后，这里会按学生合并出工单供助教复核。</div></div>
+    </div>
+
+    <div class="panel log">
+      <h2>③ 审计链（每次处理可重建）</h2>
+      <p class="note">保留：业务编号 · 资料版本 · 事实引用 · 建议结果 · 人工改动 · 签核人 · 时间。不记录账号口令与多余个人信息。</p>
+      <table id="audit">
+        <thead><tr><th>业务编号</th><th>版本</th><th>事实引用</th><th>建议结果</th><th>人工改动</th><th>签核人</th><th>时间</th></tr></thead>
+        <tbody><tr><td colspan="7" style="text-align:center;color:var(--muted)">暂无记录</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+/* ---------------- 数据层 ---------------- */
+const state = { messages: [], tickets: [], audit: [] };
+let seq = 0;
+
+const NEED_WORDS = ["不会","不懂","怎么","如何","卡住","错了","疑问","求助","不明白","不会做",
+  "解不出","看不懂","报错","失败","异常","还是不懂","听不懂","没思路","求教","急","搞不定","不知道怎么"];
+const ESCALATE_WORDS = ["成绩","处分","退学","保研","投诉","赔偿","起诉"];
+
+function isNeed(text){ return NEED_WORDS.some(w=>text.includes(w)); }
+function needsEscalation(text){ return ESCALATE_WORDS.some(w=>text.includes(w)); }
+
+function addMsg(stu, src, typ, text){
+  if(!stu.trim() || !text.trim()) return alert("请填写学生姓名与内容");
+  state.messages.push({id:++seq, stu:stu.trim(), src, typ, text:text.trim(), t:new Date()});
+  renderMsgs();
+}
+function renderMsgs(){
+  const el = document.getElementById("msgList");
+  if(!state.messages.length){ el.innerHTML='<div class="empty">还没有录入求助，点「载入示例」快速体验。</div>'; return; }
+  el.innerHTML = state.messages.map(m=>
+    `<div class="msg-item"><span class="who">${esc(m.stu)}</span><span class="src">${esc(m.src)}·${esc(m.typ)}</span><span class="txt">${esc(m.text)}</span></div>`
+  ).join("");
+  document.getElementById("k_msgs").textContent = state.messages.length;
+}
+
+/* ---------------- AI 分析：识别 + 合并连续求助 ---------------- */
+function runAI(){
+  // 按学生合并连续求助为一张工单
+  const byStu = {};
+  state.messages.forEach(m=>{ (byStu[m.stu] ||= []).push(m); });
+  state.tickets = [];
+  let ticketNo = 0, needs = 0;
+  Object.entries(byStu).forEach(([stu, msgs])=>{
+    const needMsgs = msgs.filter(m=>isNeed(m.text));
+    if(needMsgs.length===0) return; // 非求助不建单
+    needs += needMsgs.length;
+    const sample = needMsgs[0].text;
+    const escalate = needMsgs.some(m=>needsEscalation(m.text));
+    const category = pickCategory(needMsgs);
+    const owner = escalate ? "转人工（数据专员/讲师）" : "助教（林亦舟）复核";
+    const confidence = Math.min(0.95, 0.6 + needMsgs.length*0.12);
+    state.tickets.push({
+      id: "T-" + dateStr() + "-" + String(++ticketNo).padStart(3,"0"),
+      stu, srcs:[...new Set(msgs.map(m=>m.src))], original: needMsgs.map(m=>`[${m.src}·${m.typ}] ${m.text}`),
+      category, owner, confidence: confidence.toFixed(2),
+      escalate, status:"new", confirmBy:"", reason:"", ts:""
+    });
+  });
+  document.getElementById("k_needs").textContent = needs;
+  document.getElementById("k_tickets").textContent = state.tickets.length;
+  renderTickets();
+}
+function pickCategory(msgs){
+  const t = msgs.map(m=>m.text+m.typ).join("");
+  if(/报错|异常|失败|bug|运行/.test(t)) return "技术报错";
+  if(/成绩|考试|分数/.test(t)) return "学业评价（需人工）";
+  if(/概念|原理|为什么|听不懂/.test(t)) return "概念疑问";
+  if(/作业|题|思路/.test(t)) return "作业理解";
+  return "流程咨询";
+}
+
+/* ---------------- 渲染工单 + 复核动作 ---------------- */
+function renderTickets(){
+  const el = document.getElementById("tickets");
+  if(!state.tickets.length){ el.innerHTML='<div class="empty">运行 AI 分析后，这里会按学生合并出工单供助教复核。</div>'; return; }
+  el.innerHTML = state.tickets.map((t,i)=>{
+    const badge = {new:["b-new","待复核"],done:["b-done","已确认·联系"],hold:["b-hold","已暂停"],manual:["b-manual","已转人工"]}[t.status];
+    const acts = t.status==="new"
+      ? `<button class="green" onclick="confirmTicket(${i})">✓ 确认并联系</button>
+         <button class="red" onclick="manualTicket(${i})">转人工</button>
+         <button class="amber" onclick="holdTicket(${i})">暂停</button>`
+      : `<span class="note">本单已处理：${esc(t.reason||"")}${t.confirmBy?(" · 签核人 "+esc(t.confirmBy)):""}</span>`;
+    return `<div class="ticket ${t.status==="new"?"ai":t.status}">
+      <div class="top">
+        <span class="tid">${esc(t.id)} · ${esc(t.stu)}</span>
+        <span class="badge ${badge[0]}">${badge[1]}</span>
+      </div>
+      <div class="srcs">来源：${t.srcs.map(s=>`<span class="pill">${esc(s)}</span>`).join("")} · 置信度 ${t.confidence}</div>
+      <div class="block"><div class="h">原记录（事实引用）</div><div class="orig">${t.original.map(o=>"· "+esc(o)).join("\n")}</div></div>
+      <div class="block sugg"><div class="h">AI 建议（待确认字段）</div>
+        建议分类：<b>${esc(t.category)}</b><br>
+        建议责任人：<b>${esc(t.owner)}</b><br>
+        ${t.escalate?'<span style="color:var(--red);font-weight:700">⚠ 触发红线信号（成绩/处分/投诉等），必须转人工</span>':"建议：显示原记录供助教复核，人工确认后再联系学生"}</div>
+      <div class="acts">${acts}</div>
+    </div>`;
+  }).join("");
+}
+
+function confirmTicket(i){
+  const t = state.tickets[i];
+  const by = prompt("请输入签核人（助教/运营，默认 林亦舟）：","林亦舟") || "林亦舟";
+  t.status="done"; t.confirmBy=by; t.ts=now(); t.reason="人工确认后联系学生";
+  pushAudit(t, "已确认·人工确认后联系", "无（维持AI建议）", by);
+  afterAction();
+}
+function manualTicket(i){
+  const t = state.tickets[i];
+  const reason = prompt("转人工触发原因（如：缺依据/版本冲突/系统不可用/红线）：","缺依据") || "缺依据";
+  const by = prompt("接手人（默认 傅景/课程运营员核对）：","傅景") || "傅景";
+  t.status="manual"; t.confirmBy=by; t.ts=now(); t.reason="转人工："+reason;
+  pushAudit(t, "转人工", "触发原因："+reason+" · 接手人："+by, by);
+  afterAction();
+}
+function holdTicket(i){
+  const t = state.tickets[i];
+  const reason = prompt("暂停原因（默认：视频时长高但疑似挂机，待运营核对）：","视频时长高但疑似挂机，待运营核对") || "待核对";
+  t.status="hold"; t.ts=now(); t.reason="暂停："+reason;
+  pushAudit(t, "暂停建议", "原因："+reason, "林亦舟");
+  afterAction();
+}
+function afterAction(){
+  renderTickets();
+  const done = state.tickets.filter(t=>t.status==="done").length;
+  document.getElementById("k_done").textContent = done;
+}
+
+/* ---------------- 审计链 ---------------- */
+function pushAudit(t, result, change, signer){
+  state.audit.unshift({id:t.id, ver:"v1", ref:t.original.join(" | "), result, change, signer, ts:t.ts});
+  const tb = document.querySelector("#audit tbody");
+  tb.innerHTML = state.audit.map(a=>`<tr>
+    <td>${esc(a.id)}</td><td>${esc(a.ver)}</td><td>${esc(a.ref)}</td>
+    <td>${esc(a.result)}</td><td>${esc(a.change)}</td><td>${esc(a.signer)}</td><td>${esc(a.ts)}</td></tr>`).join("");
+}
+
+/* ---------------- 工具 ---------------- */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function now(){const d=new Date();return d.toLocaleString("zh-CN",{hour12:false});}
+function dateStr(){const d=new Date();return d.getFullYear()+String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0");}
+
+/* ---------------- 示例 ---------------- */
+const SAMPLE = [
+  ["张明","群聊","作业理解","第三题完全不会做，能讲一下思路吗？"],
+  ["张明","作业评论","作业理解","还是不懂第三题，第二步怎么来的？"],
+  ["李华","群聊","技术报错","作业平台提交一直报错，提示 500。"],
+  ["王芳","作业评论","概念疑问","听不懂今天讲的梯度下降原理，为什么能收敛？"],
+  ["李华","群聊","流程咨询","期末成绩会不会受影响？我有点担心。"],
+  ["陈强","作业评论","作业理解","第四题没思路，求教一下。"],
+  ["陈强","群聊","作业理解","第四题我还是不会，能不能给点提示？"]
+];
+document.getElementById("addBtn").onclick=()=>{addMsg(document.getElementById("stu").value,
+  document.getElementById("src").value, document.getElementById("typ").value, document.getElementById("txt").value);
+  document.getElementById("txt").value="";};
+document.getElementById("sampleBtn").onclick=()=>{state.messages=[];seq=0;SAMPLE.forEach(s=>addMsg(...s));};
+document.getElementById("clearBtn").onclick=()=>{state.messages=[];seq=0;renderMsgs();};
+document.getElementById("runBtn").onclick=runAI;
+renderMsgs();
+</script>
+</body>
+</html>
